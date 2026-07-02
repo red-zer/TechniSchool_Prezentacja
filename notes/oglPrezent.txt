@@ -1,0 +1,42 @@
+Sld 1
+
+-Przedstawienie się
+-Tekst w stylu:
+    Uczeń z pasją do technologii i rozwiązywania problemów,
+    Kandydat do Techni School – zainteresowany programowaniem i AI
+-Podstawowne info o moich zainteresowaniach
+
+Sld 2
+
+Powiedznie jak zaczołem programować
+
+-3 klasa podstawówki, dostałem pod choinkę lego mindstorm które można programować (w blokach)
+-4 klasa podstawówki, na informatyce zobaczenie python (turtle)
+
+Sld 3
+
+-Powiedzenie że zajmuję się też Drukiem 3D
+
+Sld 4
+
+Co już umiem z programowania:
+    -HTML, CSS, js
+    -python (podstawa) oraz microPython
+
+Sld 5
+
+Projekt do pokazania:
+    -W trakcie robienia
+
+Sld 6
+
+Końcowy slajd
+
+-Krótkie podsumowanie (1–2 zdania)
+
+-Dlaczego Ty + dlaczego ta szkoła
+    Jedno konkretne zdanie robi robotę:
+        „Wierzę, że Techni School pomoże mi rozwinąć moje umiejętności i wykorzystać mój potencjał”
+        „Jestem zmotywowany do nauki i gotowy na intensywny rozwó
+
+-Zakończenie
