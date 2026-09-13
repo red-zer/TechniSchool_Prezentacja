@@ -1,6 +1,7 @@
 body {
   background-color: black;
   font-family: 'Courier New', Courier, monospace;
+  color: white;
 }
 
 .step {
@@ -73,6 +74,10 @@ body {
   95% {
     filter: hue-rotate(15deg) saturate(200%);
   }
+}
+
+#helloOne {
+  cursor: default;
 }
 
 .animowany-napis span {
@@ -154,11 +159,13 @@ body {
   place-items: center;
 }
 
-#tittleTwo {
+#tittleTwo,
+#tittleTree {
   position: absolute;
   top: 0;
   font-size: 250%;
   text-align: center;
+  cursor: default;
 }
 
 #helloOne>div>span {
@@ -189,28 +196,147 @@ body {
   left: 5vh;
   background-color: #0004;
   display: flex;
+  border: crimson solid 2px;
 }
 
-.zainteresowanie {
-  width: 23%;
-  height: fit-content;
-  padding: 1%;
-  margin: 7.5%;
-  margin-top: 5%;
-  margin-bottom: 2%;
+.zainDisplay {
+  width: 100%;
+  height: 100%;
   border-radius: 30px;
   display: grid;
   place-items: center;
   font-size: xxx-large;
-  font-weight: bold;
   background-color: maroon;
   border: crimson solid 2px;
   cursor: pointer;
   box-shadow: 2px 2px 8px #0006;
   transition: 300ms;
+  padding: 1%;
+  visibility: visible;
+  z-index: 1;
 }
 
-.zainteresowanie:hover {
+.zainteresowanie {
+  background-color: none;
+  width: 15%;
+  height: 15%;
+  margin: 5%;
+  margin-top: 3%;
+  margin-bottom: 0;
+  visibility: hidden;
+}
+
+.zainDisplay:hover {
   transform: translate(0, -20px);
   box-shadow: 20px 40px 80px 20px #0006;
+}
+
+.zainDisplay:active {
+  transform: translate(0, 0px);
+}
+
+.zainDisplay>h1 {
+  margin: 0;
+  font-size: xxx-large;
+}
+
+.zainInfo {
+  transform: scale(0);
+  background-color: maroon;
+  margin-top: 5%;
+  border-radius: 30px;
+  transition: 300ms;
+  width: 90%;
+  padding: 5%;
+  min-height: 10%;
+  height: fit-content;
+  visibility: visible;
+  border: crimson solid 3px;
+}
+
+.zainInfo>h2 {
+  color: white;
+  font-size: x-large;
+  font-style: italic;
+  text-align: center;
+}
+
+.zainImgs {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  aspect-ratio: 1;
+}
+
+.zainImg {
+  height: 50%;
+  aspect-ratio: 1;
+  background: none;
+  display: block;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+#projects3D {
+  width: calc(100% - 10vh);
+  height: 70%;
+  position: absolute;
+  bottom: 10vh;
+  left: 5vh;
+  display: flex;
+}
+
+.projects3D {
+  background-color: maroon;
+  border: crimson solid 3px;
+  border-radius: 50px;
+  width: 40%;
+  height: 90%;
+  margin: 5%;
+  transform: scale(0);
+  transition: 300ms;
+}
+
+.projects3DTittle {
+  text-align: center;
+  font-size: xxx-large;
+}
+
+.projects3D>div {
+  border-radius: 30px;
+  width: 70%;
+  height: 70%;
+  padding: 15%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#powerDisplay {
+  width: 80%;
+  height: 60%;
+  position: absolute;
+  left: 10%;
+  bottom: 10%;
+  background-color: maroon;
+  border: crimson solid 3px;
+  border-radius: 30px;
+  text-align: center;
+}
+#powerDisplay>img {
+  height: 100%;
+  width: auto;
+}
+#stepFive {
+  display: grid;
+  place-items: center;
+}
+#tittleFive {
+  font-size: 6vh;
 }

@@ -1,4 +1,4 @@
-Sld 1
+Slide 1
 
 -Przedstawienie się
 -Tekst w stylu:
@@ -6,29 +6,30 @@ Sld 1
     Kandydat do Techni School – zainteresowany programowaniem i AI
 -Podstawowne info o moich zainteresowaniach
 
-Sld 2
+Slide 2
 
-Powiedznie jak zaczołem programować
+Moie zainteresowania:
+    -Programowanie
+    -Projektowanie 3D
+    -Drukowanie 3D
 
--3 klasa podstawówki, dostałem pod choinkę lego mindstorm które można programować (w blokach)
--4 klasa podstawówki, na informatyce zobaczenie python (turtle)
+Slide 3
 
-Sld 3
+-Powiedzenie co drukuję na drukarcę i co projektuję
 
--Powiedzenie że zajmuję się też Drukiem 3D
-
-Sld 4
+Slide 4
 
 Co już umiem z programowania:
     -HTML, CSS, js
     -python (podstawa) oraz microPython
+    -C (podstawa)
 
-Sld 5
+Slide 5
 
 Projekt do pokazania:
-    -W trakcie robienia
+    -Power glove
 
-Sld 6
+Slide 6
 
 Końcowy slajd
 
