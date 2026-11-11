@@ -1,20 +1,96 @@
-body {
-  background-color: black;
-  font-family: 'Courier New', Courier, monospace;
-  color: white;
+/* ==========================================================================
+   GLOBAL & RESET FOR 4K DISPLAY
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #050508;
+  font-family: 'Courier New', Courier, monospace;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   METALLIC DESIGN SYSTEM (STYL METALICZNY)
+   ========================================================================== */
+/* Karty z szarym/metalicznym gradientem oraz połyskującą ramką stalowo-bordową */
+/* Poprawiona klasa z obsługą zaokrąglonych rogów i gradientowej ramki */
+.metallic-card {
+  position: relative;
+  border-radius: 40px; /* Teraz zaokrąglenie działa prawidłowo */
+  border: 3px solid transparent;
+
+  /* Podwójny gradient: pierwszy to wnętrze karty, drugi to kolor ramki */
+  background:
+    linear-gradient(135deg, #2b1219 0%, #12131a 50%, #2a080c 100%) padding-box,
+    linear-gradient(135deg, #ff3355, #888899, #8b0000, #ffffff, #8b0000) border-box;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.8),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3),
+    0 0 30px rgba(220, 20, 60, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* Wewnętrzna tekstura metaliczna również musi mieć dopasowane zaokrąglenie */
+.metallic-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 37px; /* Domyślne zaokrąglenie minus grubość ramki */
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.015),
+    rgba(255, 255, 255, 0.015) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+}
+
+/* Efekt metalicznej siatki/szczotkowania */
+.metallic-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.015),
+    rgba(255, 255, 255, 0.015) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+}
+
+.metallic-container {
+  background: linear-gradient(180deg, rgba(20, 5, 10, 0.75) 0%, rgba(5, 5, 12, 0.85) 100%);
+  border: 3px solid #dc143c;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.9),
+    inset 0 0 20px rgba(220, 20, 60, 0.2);
+}
+
+/* ==========================================================================
+   IMPRESS STEP & BACKGROUND ANIMATION
+   ========================================================================== */
 .step {
   width: 100vw;
   height: 100vh;
   position: absolute;
-  top: 0px;
-  left: 0px;
-  display: grid;
-  place-items: center;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
@@ -25,318 +101,286 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -2;
   background:
-    radial-gradient(ellipse at 0% 25%, darkmagenta 25%, transparent 70%),
-    radial-gradient(ellipse at 0% 25%, blue 25%, transparent 70%),
-    radial-gradient(ellipse at 0% 25%, purple 25%, transparent 70%),
-    radial-gradient(ellipse at 0% 25%, crimson 25%, transparent 70%),
-    radial-gradient(ellipse at 0% 25%, darkblue 25%, transparent 70%), radial-gradient(ellipse at 100% 75%, darkblue 25%, transparent 70%);
-  background-color: #f5f5f5;
+    radial-gradient(ellipse at 0% 25%, darkmagenta 20%, transparent 70%),
+    radial-gradient(ellipse at 50% 0%, #110022 25%, transparent 70%),
+    radial-gradient(ellipse at 100% 75%, darkblue 20%, transparent 70%),
+    radial-gradient(ellipse at 20% 80%, crimson 15%, transparent 60%);
+  background-color: #050508;
   background-size: 100% 100%;
-  filter: hue-rotate(0) saturate(200%);
-  animation-duration: 12s;
-  animation-iteration-count: infinite;
-  animation-name: abstract-1;
+  filter: hue-rotate(0deg) saturate(180%);
+  animation: abstract-1 16s infinite ease-in-out;
 }
 
 @keyframes abstract-1 {
-  0% {
-    filter: hue-rotate(0) saturate(200%);
-    background-size: 100% 100%;
-  }
-
-  20% {
-    filter: hue-rotate(0) saturate(150%);
-  }
-
-  25% {
-    filter: hue-rotate(-45deg) saturate(150%);
-  }
-
-  45% {
-    filter: hue-rotate(-45deg) saturate(400%);
-  }
-
-  50% {
-    filter: hue-rotate(0) saturate(400%);
-    background-size: 100% 300%;
-  }
-
-  70% {
-    filter: hue-rotate(0) saturate(150%);
-  }
-
-  75% {
-    filter: hue-rotate(15deg) saturate(150%);
-  }
-
-  95% {
-    filter: hue-rotate(15deg) saturate(200%);
-  }
+  0% { filter: hue-rotate(0deg) saturate(180%); }
+  50% { filter: hue-rotate(-30deg) saturate(220%); }
+  100% { filter: hue-rotate(0deg) saturate(180%); }
 }
 
+/* ==========================================================================
+   SLAJD 1: KROK PIERWSZY
+   ========================================================================== */
 #helloOne {
+  position: absolute;
+  top: 8vh;
+  font-size: 3.5rem;
+  text-align: center;
   cursor: default;
+  text-shadow: 0 10px 20px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.4);
 }
 
 .animowany-napis span {
   display: inline-block;
-  font-size: 3rem;
+  font-size: 7rem;
   font-weight: bold;
+  background: linear-gradient(180deg, #ffffff 0%, #aaa 50%, #666 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.9));
 }
 
-.animowany-napis span:nth-child(1) {
-  animation: losowyRuch1 1.2s cubic-bezier(0.42, 0, 0.58, 1) infinite;
-  animation-delay: 0.1s;
-}
-
-.animowany-napis span:nth-child(2) {
-  animation: losowyRuch2 1.6s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-  animation-delay: 0.4s;
-}
-
-.animowany-napis span:nth-child(3) {
-  animation: losowyRuch3 1.4s cubic-bezier(0.3, 1.5, 0.6, 1) infinite;
-  animation-delay: 0.2s;
-}
-
-
+.animowany-napis span:nth-child(1) { animation: losowyRuch1 1.2s ease-in-out infinite; }
+.animowany-napis span:nth-child(2) { animation: losowyRuch2 1.6s ease-in-out infinite; animation-delay: 0.3s; }
+.animowany-napis span:nth-child(3) { animation: losowyRuch3 1.4s ease-in-out infinite; animation-delay: 0.15s; }
 
 @keyframes losowyRuch1 {
-
-  0%,
-  100% {
-    transform: translateY(0) translateX(0);
-  }
-
-  33% {
-    transform: translateY(-12px) translateX(-4px);
-  }
-
-  66% {
-    transform: translateY(6px) translateX(2px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
-
 @keyframes losowyRuch2 {
-
-  0%,
-  100% {
-    transform: translateY(0) translateX(0);
-  }
-
-  25% {
-    transform: translateY(4px) translateX(3px);
-  }
-
-  75% {
-    transform: translateY(-14px) translateX(-2px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(12px); }
 }
-
 @keyframes losowyRuch3 {
-
-  0%,
-  100% {
-    transform: translateY(0) translateX(0);
-  }
-
-  40% {
-    transform: translateY(-16px) translateX(4px);
-  }
-
-  80% {
-    transform: translateY(8px) translateX(-3px);
-  }
-}
-
-#helloOne {
-  position: absolute;
-  top: 0;
-  font-size: 300%;
-  display: grid;
-  place-items: center;
-}
-
-#tittleTwo,
-#tittleTree {
-  position: absolute;
-  top: 0;
-  font-size: 250%;
-  text-align: center;
-  cursor: default;
-}
-
-#helloOne>div>span {
-  font-size: 300%;
-}
-
-#helloOne>h2 {
-  padding: 0px;
-  margin: 0px;
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
 }
 
 #helloTwo {
-  min-width: 700px;
-  width: 45%;
-  height: fit-content;
-  border-radius: 50px;
-  background-color: maroon;
-  border: crimson solid 2px;
-  padding: 2vh;
+  min-width: 900px;
+  max-width: 60vw;
+  border-radius: 40px;
+  padding: 3vh 4vw;
+  text-align: center;
 }
 
-#zainteresowania {
-  width: calc(100% - 10vh);
-  height: 65%;
+#helloTwo h2 {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   NAGŁÓWKI SLAJDÓW
+   ========================================================================== */
+#tittleTwo, #tittleTree, #tittleFour {
   position: absolute;
-  bottom: 5vh;
-  border-radius: 50px;
-  left: 5vh;
-  background-color: #0004;
+  top: 6vh;
+  font-size: 2.5rem;
+  text-align: center;
+  cursor: default;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: linear-gradient(180deg, #ffffff 30%, #dc143c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.9));
+}
+
+/* ==========================================================================
+   SLAJD 2: ZAINTERESOWANIA
+   ========================================================================== */
+#zainteresowania {
+  width: 90vw;
+  height: 65vh;
+  position: absolute;
+  bottom: 8vh;
+  border-radius: 40px;
   display: flex;
-  border: crimson solid 2px;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 2vh 1vw;
+}
+
+.zainteresowanie {
+  width: 21%;
+  height: 100%;
+  position: relative;
+  visibility: hidden; /* Kontrolowane przez kod JS */
 }
 
 .zainDisplay {
   width: 100%;
-  height: 100%;
+  height: 180px;
   border-radius: 30px;
   display: grid;
   place-items: center;
-  font-size: xxx-large;
-  background-color: maroon;
-  border: crimson solid 2px;
   cursor: pointer;
-  box-shadow: 2px 2px 8px #0006;
-  transition: 300ms;
-  padding: 1%;
+  transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   visibility: visible;
-  z-index: 1;
+  z-index: 2;
 }
 
-.zainteresowanie {
-  background-color: none;
-  width: 15%;
-  height: 15%;
-  margin: 5%;
-  margin-top: 3%;
-  margin-bottom: 0;
-  visibility: hidden;
+.zainDisplay h1 {
+  font-size: 4.5rem;
+  color: #fff;
+  text-shadow: 0 0 20px #dc143c;
 }
 
 .zainDisplay:hover {
-  transform: translate(0, -20px);
-  box-shadow: 20px 40px 80px 20px #0006;
-}
-
-.zainDisplay:active {
-  transform: translate(0, 0px);
-}
-
-.zainDisplay>h1 {
-  margin: 0;
-  font-size: xxx-large;
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 30px 60px rgba(220, 20, 60, 0.5);
 }
 
 .zainInfo {
   transform: scale(0);
-  background-color: maroon;
-  margin-top: 5%;
+  margin-top: 20px;
   border-radius: 30px;
-  transition: 300ms;
-  width: 90%;
-  padding: 5%;
-  min-height: 10%;
-  height: fit-content;
+  transition: transform 400ms ease;
+  width: 100%;
+  padding: 20px;
   visibility: visible;
-  border: crimson solid 3px;
 }
 
-.zainInfo>h2 {
-  color: white;
-  font-size: x-large;
-  font-style: italic;
+.zainInfo h2 {
+  color: #ffffff;
+  font-size: 1.6rem;
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .zainImgs {
-  box-sizing: border-box;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
+  width: 100%;
   aspect-ratio: 1;
 }
 
 .zainImg {
+  width: 50%;
   height: 50%;
-  aspect-ratio: 1;
-  background: none;
   display: block;
+  padding: 5px;
 }
 
-img {
+.zainImg img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
 
+/* ==========================================================================
+   SLAJD 3: PROJEKTY 3D & WSPÓŁCZYNNIK 16:9
+   ========================================================================== */
 #projects3D {
-  width: calc(100% - 10vh);
-  height: 70%;
+  width: 90vw;
+  height: 70vh;
   position: absolute;
-  bottom: 10vh;
-  left: 5vh;
+  bottom: 8vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4vw;
 }
 
 .projects3D {
-  background-color: maroon;
-  border: crimson solid 3px;
-  border-radius: 50px;
-  width: 40%;
-  height: 90%;
-  margin: 5%;
+  border-radius: 40px;
+  width: 42%;
+  height: auto;
+  max-height: 90%;
   transform: scale(0);
-  transition: 300ms;
+  transition: transform 400ms ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 25px 35px 25px;
 }
 
 .projects3DTittle {
   text-align: center;
-  font-size: xxx-large;
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 0 0 15px #dc143c;
 }
 
-.projects3D>div {
-  border-radius: 30px;
-  width: 70%;
-  height: 70%;
-  padding: 15%;
-  padding-top: 0;
-  padding-bottom: 0;
+.img-wrapper, #wallpaperShowParrent {
+  border-radius: 20px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
+  border: 2px solid rgba(255,255,255,0.2);
 }
 
+/* Główna reguła proporcji 16:9 */
+.projects3DImg,
+#wallpaperShow {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
+}
+
+/* ==========================================================================
+   SLAJD 4: POWER GLOVE
+   ========================================================================== */
 #powerDisplay {
-  width: 80%;
-  height: 60%;
+  width: 70vw;
+  height: 62vh;
   position: absolute;
-  left: 10%;
-  bottom: 10%;
-  background-color: maroon;
-  border: crimson solid 3px;
-  border-radius: 30px;
+  bottom: 10vh;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+#powerDisplay img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.9));
+}
+
+/* ==========================================================================
+   SLAJD 5: ZAKOŃCZENIE
+   ========================================================================== */
+#stepFive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.final-card {
+  padding: 5vh 6vw;
+  border-radius: 50px;
   text-align: center;
 }
-#powerDisplay>img {
-  height: 100%;
-  width: auto;
-}
-#stepFive {
-  display: grid;
-  place-items: center;
-}
+
 #tittleFive {
-  font-size: 6vh;
+  font-size: 5rem;
+  letter-spacing: 2px;
+  background: linear-gradient(180deg, #ffffff 0%, #ff3355 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.9);
+}
+#overlayClick {
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+}
+#tittleTree {
+  width: 100vw;
+}
+#tapetaShowCaseIf {
+  width: 1920px;
+  height: 1080px;
+  z-index: 100000;
+  position: absolute;
+  left: calc(50% - (1920px / 2));
 }
