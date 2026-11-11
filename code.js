@@ -32,7 +32,7 @@ function slideTreeBtn() {
       const iframe = document.createElement("iframe")
       const iframeP = document.querySelectorAll(".step")[2]
       iframe.id = 'tapetaShowCaseIf'
-      iframe.src = 'tapeta/index.html'
+      iframe.src = 'tapeta.html'
       iframeP.appendChild(iframe)
     } else {
       project1.style.transform = "scale(0)"
