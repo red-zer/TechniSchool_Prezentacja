@@ -1,17 +1,18 @@
 <!doctype html>
-<html>
+<html lang="pl">
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prezentacja</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <div id="impress">
 
-        <div class="step" data-x="0" data-y="0" data-scale="1">
+        <!-- Slajd 1: Start / Powitanie -->
+        <div class="step" data-x="0" data-y="0" data-z="0" data-scale="1" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0">
             <header id="helloOne">
                 <div class="animowany-napis">
                     <span>H</span>
@@ -20,103 +21,104 @@
                 </div>
                 <p>Jestem Maciek</p>
             </header>
-            <div id="helloTwo">
-                <h2>Uczeń z pasją do technologii i rozwiązywania problemów</h2><br>
-                <h2>Przykładowe zainteresowanie:<br>
-                    <h3>-Programowanie</h3>
-                </h2>
+            <div id="helloTwo" class="metallic-card">
+                <h2>Uczeń z pasją do technologii i rozwiązywania problemów</h2>
             </div>
         </div>
 
-        <div class="step" data-x="0" data-y="1500" data-scale="1">
+        <!-- Slajd 2: Zainteresowania (Przesunięcie daleko w dół i w głąb) -->
+        <div class="step" data-x="0" data-y="6000" data-z="-3000" data-scale="1" data-rotate-x="-45" data-rotate-y="0" data-rotate-z="0">
             <header id="tittleTwo">
                 <h1>Moje zainteresowania</h1>
             </header>
-            <div id="zainteresowania">
+            <div id="zainteresowania" class="metallic-container">
                 <div class="zainteresowanie">
-                    <div class="zainDisplay">
+                    <div class="zainDisplay metallic-card">
                         <h1>1</h1>
                     </div>
-                    <div class="zainInfo" id="zainInfo1">
+                    <div class="zainInfo metallic-card" id="zainInfo1">
                         <h2>Programowanie</h2>
                         <div class="zainImgs">
                             <span class="zainImg" style="transform: rotate(35deg);">
-                                <img src="assets/ProgramingImg1.png">
+                                <img src="assets/ProgramingImg1.png" alt="Programowanie 1">
                             </span>
                             <span class="zainImg" style="transform: rotate(52deg);">
-                                <img src="assets/ProgramingImg2.png">
+                                <img src="assets/ProgramingImg2.png" alt="Programowanie 2">
                             </span>
                             <span class="zainImg" style="transform: rotate(-42deg);">
-                                <img src="assets/ProgramingImg3.png">
+                                <img src="assets/ProgramingImg3.png" alt="Programowanie 3">
                             </span>
                             <span class="zainImg" style="transform: rotate(9deg);">
-                                <img src="assets/ProgramingImg4.png">
+                                <img src="assets/ProgramingImg4.png" alt="Programowanie 4">
                             </span>
                         </div>
                     </div>
                 </div>
+
                 <div class="zainteresowanie">
-                    <div class="zainDisplay">
+                    <div class="zainDisplay metallic-card">
                         <h1>2</h1>
                     </div>
-                    <div class="zainInfo" id="zainInfo2">
+                    <div class="zainInfo metallic-card" id="zainInfo2">
                         <h2>Drukowanie 3D</h2>
                         <div class="zainImgs">
                             <span class="zainImg" style="transform: rotate(15deg);">
-                                <img src="assets/3DImg1.png">
+                                <img src="assets/3DImg1.png" alt="3D 1">
                             </span>
                             <span class="zainImg" style="transform: rotate(42deg);">
-                                <img src="assets/3DImg2.png">
+                                <img src="assets/3DImg2.png" alt="3D 2">
                             </span>
                             <span class="zainImg" style="transform: rotate(-25deg);">
-                                <img src="assets/3DImg3.png">
+                                <img src="assets/3DImg3.png" alt="3D 3">
                             </span>
                             <span class="zainImg" style="transform: rotate(-7deg);">
-                                <img src="assets/3DImg4.png">
+                                <img src="assets/3DImg4.png" alt="3D 4">
                             </span>
                         </div>
                     </div>
                 </div>
+
                 <div class="zainteresowanie">
-                    <div class="zainDisplay">
+                    <div class="zainDisplay metallic-card">
                         <h1>3</h1>
                     </div>
-                    <div class="zainInfo" id="zainInfo3">
+                    <div class="zainInfo metallic-card" id="zainInfo3">
                         <h2>Projektowanie 3D</h2>
                         <div class="zainImgs">
                             <span class="zainImg" style="transform: rotate(35deg);">
-                                <img src="assets/3DProjectImg1.png">
+                                <img src="assets/3DProjectImg1.png" alt="Projekt 1">
                             </span>
                             <span class="zainImg" style="transform: rotate(52deg);">
-                                <img src="assets/3DProjectImg2.png">
+                                <img src="assets/3DProjectImg2.png" alt="Projekt 2">
                             </span>
                             <span class="zainImg" style="transform: rotate(-42deg);">
-                                <img src="assets/3DProjectImg3.png">
+                                <img src="assets/3DProjectImg3.png" alt="Projekt 3">
                             </span>
                             <span class="zainImg" style="transform: rotate(9deg);">
-                                <img src="assets/3DProjectImg4.png">
+                                <img src="assets/3DProjectImg4.png" alt="Projekt 4">
                             </span>
                         </div>
                     </div>
                 </div>
+
                 <div class="zainteresowanie">
-                    <div class="zainDisplay">
+                    <div class="zainDisplay metallic-card">
                         <h1>4</h1>
                     </div>
-                    <div class="zainInfo" id="zainInfo4">
-                        <h2>Microkontrolery</h2>
+                    <div class="zainInfo metallic-card" id="zainInfo4">
+                        <h2>Mikrokontrolery</h2>
                         <div class="zainImgs">
                             <span class="zainImg" style="transform: rotate(35deg);">
-                                <img src="assets/micorImg1.png">
+                                <img src="assets/micorImg1.png" alt="Mikro 1">
                             </span>
                             <span class="zainImg" style="transform: rotate(52deg);">
-                                <img src="assets/micorImg2.png">
+                                <img src="assets/micorImg2.png" alt="Mikro 2">
                             </span>
                             <span class="zainImg" style="transform: rotate(-42deg);">
-                                <img src="assets/micorImg3.png">
+                                <img src="assets/micorImg3.png" alt="Mikro 3">
                             </span>
                             <span class="zainImg" style="transform: rotate(9deg);">
-                                <img src="assets/microImg4.png">
+                                <img src="assets/microImg4.png" alt="Mikro 4">
                             </span>
                         </div>
                     </div>
@@ -124,46 +126,41 @@
             </div>
         </div>
 
-        <div class="step" data-x="2000" data-y="1500" data-scale="0.1" data-rotate="90">
+        <!-- Slajd 3: Co programuję (Skręt w prawo o 90 stopni, duża odległość) -->
+        <div class="step" data-x="12000" data-y="6000" data-z="-6000" data-scale="1" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0" id="zainMoi">
+          <div id="overlayClick">
             <header id="tittleTree">
-                <h1>Co drukuję i co projektuję</h1>
+                <h1>Co programuję i projektuję</h1>
             </header>
             <div id="projects3D">
-                <div class="projects3D" id="project1">
+                <div class="projects3D metallic-card" id="project1">
                     <h1 class="projects3DTittle">1</h1>
-                    <div>
-                        <img class="projects3DImg" src="assets/slideTreeImg1.jpg">
+                    <div class="img-wrapper">
+                        <img class="projects3DImg" src="assets/slideTreeImg1.jpg" alt="Projekt 1">
                     </div>
                 </div>
-                <div class="projects3D" id="project2">
+                <div class="projects3D metallic-card" id="project2">
                     <h1 class="projects3DTittle">2</h1>
-                    <div>
-                        <img class="projects3DImg" src="assets/powerGlove.png">
+                    <div class="img-wrapper" id="wallpaperShowParrent">
+                        <img class="projects3DImg" id="wallpaperShow" src="assets/wallpaper.png" alt="Projekt 2">
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="step" data-x="5000" data-y="1500" data-scale="0.1" data-rotate="1000000">
-            <header id="tittleTree">
-                <h1>Power glove</h1>
-            </header>
-            <div id="powerDisplay">
-                <img src="assets/powerGlove.png">
-            </div>
         </div>
 
-        <div class="step" id="stepFive" data-x="8000" data-y="2000" data-scale="1" data-rotate="1000090">
-            <header id="tittleFive">
-                <h1>Dziękuję za uwagę</h1>
-            </header>
+        <!-- Slajd 4: Zakończenie -->
+        <div class="step" id="stepFive" data-x="0" data-y="-4000" data-z="0" data-scale="1" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0">
+          <div class="metallic-card final-card">
+              <h1 id="tittleFive">Dziękuję za uwagę</h1>
+          </div>
         </div>
 
-        <script src="code.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/impress.js"></script>
-        <script>
-            impress().init();
-        </script>
+    <script src="code.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/impress.js"></script>
+    <script>
+        impress().init();
+    </script>
 
 </body>
 
