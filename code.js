@@ -1,4 +1,4 @@
-let slideTreeCount = 1
+let slideTreeCount = 0
 
 function zainBtn() {
     let count = 0
@@ -16,30 +16,36 @@ function zainBtn() {
     }
 }
 function slideTreeFun() {
-    const silde = document.getElementById("projects3D")
+    const silde = document.getElementById("overlayClick")
     silde.onclick = slideTreeBtn
 }
 function slideTreeBtn() {
     const project1 = document.querySelector("#project1")
     const project2 = document.querySelector("#project2")
     console.log(slideTreeCount)
-    if (slideTreeCount == 1) {
+    if (slideTreeCount == 0) {
         project1.style.transform = "scale(1)"
-    } else if (slideTreeCount == 2) {
+    } else if (slideTreeCount == 1) {
         project2.style.transform = "scale(1)"
+    } else if ( slideTreeCount == 2) {
+      console.log("Tapeta showcase")
+      const iframe = document.createElement("iframe")
+      const iframeP = document.querySelectorAll(".step")[2]
+      iframe.id = 'tapetaShowCaseIf'
+      iframe.src = 'tapeta/index.html'
+      iframeP.appendChild(iframe)
     } else {
-        project1.style.transform = "scale(0)"
-
-        project2.style.transform = "scale(0)"
+      project1.style.transform = "scale(0)"
+      project2.style.transform = "scale(0)"
+      const removeE = document.getElementById("tapetaShowCaseIf")
+      removeE.remove()
     }
 
     if (slideTreeCount == 3) {
-        slideTreeCount = 1
+        slideTreeCount = 0
     } else {
         slideTreeCount++
     }
 }
-
-
 zainBtn()
 slideTreeFun()
